@@ -26,6 +26,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RoomBookingApp.Core\RoomBookingApp.Core.csproj" />
+    <ProjectReference Include="..\RoomBookingApp.Domain\RoomBookingApp.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>

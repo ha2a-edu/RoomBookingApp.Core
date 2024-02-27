@@ -1,6 +1,4 @@
-﻿using RoomBookingApp.Core.Enums;
-
-namespace RoomBookingApp.Core.Models
+﻿namespace RoomBookingApp.Domain.BaseModels
 {
     public abstract class RoomBookingBase
     {

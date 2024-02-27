@@ -1,10 +1,11 @@
 ﻿using Moq;
-using RoomBookingApp.Core.Domain;
+using RoomBookingApp.Domain;
 using RoomBookingApp.Core.Enums;
 using RoomBookingApp.Core.Models;
 using RoomBookingApp.Core.Processors;
 using RoomBookingApp.DataServices;
 using Shouldly;
+using RoomBookingApp.Domain.BaseModels;
 
 namespace RoomBookingApp.Core.Tests
 {
@@ -39,7 +40,7 @@ namespace RoomBookingApp.Core.Tests
 
 
             // Act
-            RoomBookingBase result = _processor.BookRoom(_request);
+            RoomBookingResponse result = _processor.BookRoom(_request);
 
             // Assert
             Assert.NotNull(result);

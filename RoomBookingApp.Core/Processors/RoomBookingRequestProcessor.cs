@@ -5,7 +5,7 @@ using RoomBookingApp.Domain.BaseModels;
 
 namespace RoomBookingApp.Core.Processors
 {
-    public class RoomBookingRequestProcessor
+    public class RoomBookingRequestProcessor : IRoomBookingRequestProcessor
     {
         private readonly IRoomBookingService _roomBookingService;
 
@@ -17,8 +17,8 @@ namespace RoomBookingApp.Core.Processors
         public RoomBookingResponse BookRoom(RoomBookingRequest roomBookingRequest)
         {
             if (roomBookingRequest is null)
-            { 
-                throw new ArgumentNullException(nameof(roomBookingRequest));   
+            {
+                throw new ArgumentNullException(nameof(roomBookingRequest));
             }
 
             var availableRooms = _roomBookingService.GetAvailableRooms(roomBookingRequest.Date);
@@ -44,14 +44,14 @@ namespace RoomBookingApp.Core.Processors
             return response;
         }
 
-        private T CreateRoomBookingObject<T>(RoomBookingRequest roomBookingRequest) 
+        private T CreateRoomBookingObject<T>(RoomBookingRequest roomBookingRequest)
             where T : RoomBookingBase, new()
-        { 
-            return new T 
-            { 
-                FullName = roomBookingRequest.FullName, 
-                Email = roomBookingRequest.Email, 
-                Date = roomBookingRequest.Date 
+        {
+            return new T
+            {
+                FullName = roomBookingRequest.FullName,
+                Email = roomBookingRequest.Email,
+                Date = roomBookingRequest.Date
             };
         }
     }

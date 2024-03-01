@@ -8,7 +8,6 @@ using RoomBookingApp.Persistance.Repositories;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -43,6 +42,7 @@ app.Run();
 
 void EnsureDatabaseCreated(SqliteConnection connection)
 {
+    // make sure db will be created
     var dbBuilder = new DbContextOptionsBuilder<RoomBookingAppDbContext>();
     dbBuilder.UseSqlite(connection);
 

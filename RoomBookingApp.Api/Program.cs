@@ -42,6 +42,7 @@ app.Run();
 
 void EnsureDatabaseCreated(SqliteConnection connection)
 {
+    // make sure db will be created
     var dbBuilder = new DbContextOptionsBuilder<RoomBookingAppDbContext>();
     dbBuilder.UseSqlite(connection);
 
